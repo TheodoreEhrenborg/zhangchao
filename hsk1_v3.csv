@@ -2,503 +2,558 @@
 # Source: Wiktionary - https://en.wiktionary.org/wiki/Appendix:HSK_list_of_Mandarin_words_v3.0/level_1
 # License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 # Format: chinese,pinyin,english
-爱,ài,TODO
-吧,ba,TODO
-八,bā,TODO
-白,bái,TODO
-百,bǎi,TODO
-班,bān,TODO
-半,bàn,TODO
-帮,bāng,TODO
-包,bāo,TODO
-杯,bēi,TODO
-北,běi,TODO
-本,běn,TODO
-比,bǐ,TODO
-别,bié,TODO
-病,bìng,TODO
-不,bù,TODO
-菜,cài,TODO
-茶,chá,TODO
-差,chà,TODO
-常,cháng,TODO
-唱,chàng,TODO
-车,chē,TODO
-吃,chī,TODO
-出,chū,TODO
-穿,chuān,TODO
-床,chuáng,TODO
-次,cì,TODO
-从,cóng,TODO
-错,cuò,TODO
-打,dǎ,TODO
-大,dà,TODO
-到,dào,TODO
-地,de,TODO
-的,de,TODO
-等,děng,TODO
-地,dì,TODO
-第,dì,TODO
-点,diǎn,TODO
-电,diàn,TODO
-东,dōng,TODO
-动,dòng,TODO
-都,dōu,TODO
-读,dú,TODO
-对,duì,TODO
-多,duō,TODO
-饿,è,TODO
-二,èr,TODO
-饭,fàn,TODO
-放,fàng,TODO
-飞,fēi,TODO
-分,fēn,TODO
-风,fēng,TODO
-干,gān,TODO
-干,gàn,TODO
-高,gāo,TODO
-歌,gē,TODO
-个,gè,TODO
-给,gěi,TODO
-跟,gēn,TODO
-关,guān,TODO
-贵,guì,TODO
-国,guó,TODO
-过,guò,TODO
-还,hái,TODO
-好,hǎo,TODO
-号,hào,TODO
-喝,hē,TODO
-和,hé,TODO
-很,hěn,TODO
-后,hòu,TODO
-花,huā,TODO
-话,huà,TODO
-坏,huài,TODO
-还,huán,TODO
-回,huí,TODO
-会,huì,TODO
-几,jǐ,TODO
-记,jì,TODO
-家,jiā,TODO
-间,jiān,TODO
-见,jiàn,TODO
-教,jiāo,TODO
-叫,jiào,TODO
-进,jìn,TODO
-九,jiǔ,TODO
-就,jiù,TODO
-开,kāi,TODO
-看,kàn,TODO
-考,kǎo,TODO
-渴,kě,TODO
-课,kè,TODO
-口,kǒu,TODO
-块,kuài,TODO
-快,kuài,TODO
-来,lái,TODO
-老,lǎo,TODO
-了,le,TODO
-累,lèi,TODO
-冷,lěng,TODO
-里,lǐ,TODO
-两,liǎng,TODO
-零/〇,líng,TODO
-六,liù,TODO
-楼,lóu,TODO
-路,lù,TODO
-吗,ma,TODO
-买,mǎi,TODO
-慢,màn,TODO
-忙,máng,TODO
-毛,máo,TODO
-没,méi,TODO
-们,men,TODO
-门,mén,TODO
-拿,ná,TODO
-哪,nǎ,TODO
-哪儿,nǎr,TODO
-那,nà,TODO
-那儿,nàr,TODO
-奶,nǎi,TODO
-南,nán,TODO
-男,nán,TODO
-难,nán,TODO
-呢,ne,TODO
-能,néng,TODO
-你,nǐ,TODO
-年,nián,TODO
-您,nín,TODO
-女,nǚ,TODO
-跑,pǎo,TODO
-票,piào,TODO
-七,qī,TODO
-起,qǐ,TODO
-前,qián,TODO
-钱,qián,TODO
-请,qǐng,TODO
-球,qiú,TODO
-去,qù,TODO
-热,rè,TODO
-人,rén,TODO
-日,rì,TODO
-肉,ròu,TODO
-三,sān,TODO
-山,shān,TODO
-上,shàng,TODO
-少,shǎo,TODO
-谁,shéi/shuí,TODO
-十,shí,TODO
-事,shì,TODO
-是,shì,TODO
-试,shì,TODO
-手,shǒu,TODO
-书,shū,TODO
-树,shù,TODO
-水,shuǐ,TODO
-睡,shuì,TODO
-说,shuō,TODO
-四,sì,TODO
-送,sòng,TODO
-岁,suì,TODO
-他,tā,TODO
-她,tā,TODO
-太,tài,TODO
-天,tiān,TODO
-听,tīng,TODO
-外,wài,TODO
-玩儿,wánr,TODO
-晚,wǎn,TODO
-忘,wàng,TODO
-问,wèn,TODO
-我,wǒ,TODO
-五,wǔ,TODO
-西,xī,TODO
-洗,xǐ,TODO
-下,xià,TODO
-先,xiān,TODO
-想,xiǎng,TODO
-小,xiǎo,TODO
-笑,xiào,TODO
-写,xiě,TODO
-新,xīn,TODO
-行,xíng,TODO
-学,xué,TODO
-要,yào,TODO
-也,yě,TODO
-页,yè,TODO
-一,yī,TODO
-用,yòng,TODO
-有,yǒu,TODO
-右,yòu,TODO
-雨,yǔ,TODO
-元,yuán,TODO
-远,yuǎn,TODO
-月,yuè,TODO
-再,zài,TODO
-在,zài,TODO
-早,zǎo,TODO
-站,zhàn,TODO
-找,zhǎo,TODO
-着,zhe,TODO
-这,zhè,TODO
-真,zhēn,TODO
-正,zhèng,TODO
-这儿,zhèr,TODO
-中,zhōng,TODO
-重,zhòng,TODO
-住,zhù,TODO
-子,zi,TODO
-字,zì,TODO
-走,zǒu,TODO
-最,zuì,TODO
-左,zuǒ,TODO
-做,zuò,TODO
-坐,zuò,TODO
-爱好,àihào,TODO
-爸爸/爸,bà(ba),TODO
-白天,báitiān,TODO
-半年,bàn nián,TODO
-半天,bàntiān,TODO
-帮忙,bāng∥máng,TODO
-包子,bāozi,TODO
-杯子,bēizi,TODO
-北边,běibian,TODO
-北京,Běijīng,TODO
-本子,běnzi,TODO
-别的,biéde,TODO
-别人,bié·rén,TODO
-病人,bìngrén,TODO
-不大,bú dà,TODO
-不对,búduì,TODO
-不用,búyòng,TODO
-常常,chángcháng,TODO
-唱歌,chàng∥gē,TODO
-车票,chēpiào,TODO
-车上,chē shang,TODO
-车站,chēzhàn,TODO
-吃饭,chī∥fàn,TODO
-出来,chū∥·lái,TODO
-出去,chū∥·qù,TODO
-打车,dǎ∥chē,TODO
-打开,dǎ∥kāi,TODO
-打球,dǎ qiú,TODO
-大学,dàxué,TODO
-得到,dé∥dào,TODO
-弟弟/弟,dì(di),TODO
-地点,dìdiǎn,TODO
-地方,dìfang,TODO
-地上,dìshang,TODO
-地图,dìtú,TODO
-电话,diànhuà,TODO
-电脑,diànnǎo,TODO
-电视,diànshì,TODO
-电影,diànyǐng,TODO
-东边,dōngbian,TODO
-东西,dōngxi,TODO
-动作,dòngzuò,TODO
-读书,dú∥shū,TODO
-多少,duōshao,TODO
-儿子,érzi,TODO
-饭店,fàndiàn,TODO
-房间,fángjiān,TODO
-房子,fángzi,TODO
-放假,fàng∥jià,TODO
-放学,fàng∥xué,TODO
-非常,fēicháng,TODO
-飞机,fēijī,TODO
-干净,gānjìng,TODO
-高兴,gāoxìng,TODO
-告诉,gàosu,TODO
-哥哥/哥,gē(ge),TODO
-工人,gōngrén,TODO
-工作,gōngzuò,TODO
-关上,guānshang,TODO
-国家,guójiā,TODO
-国外,guó wài,TODO
-还是,háishi,TODO
-还有,hái yǒu,TODO
-孩子,háizi,TODO
-汉语,Hànyǔ,TODO
-汉字,Hànzì,TODO
-好吃,hǎochī,TODO
-好看,hǎokàn,TODO
-好听,hǎotīng,TODO
-好玩儿,hǎowánr,TODO
-后边,hòubian,TODO
-后天,hòutiān,TODO
-回答,huídá,TODO
-回到,huídào,TODO
-回家,huí jiā,TODO
-回来,huí∥·lái,TODO
-回去,huí∥·qù,TODO
-火车,huǒchē,TODO
-机场,jīchǎng,TODO
-鸡蛋,jīdàn,TODO
-机票,jīpiào,TODO
-记得,jìde,TODO
-记住,jìzhù,TODO
-家里,jiā li,TODO
-家人,jiārén,TODO
-见面,jiàn∥miàn,TODO
-姐姐/姐,jiě(jie),TODO
-介绍,jièshào,TODO
-今年,jīnnián,TODO
-今天,jīntiān,TODO
-进来,jìn∥·lái,TODO
-进去,jìn∥·qù,TODO
-觉得,juéde,TODO
-开车,kāi∥chē,TODO
-开会,kāi∥huì,TODO
-看病,kàn∥bìng,TODO
-看到,kàndào,TODO
-看见,kàn∥jiàn,TODO
-考试,kǎo∥shì,TODO
-课本,kèběn,TODO
-课文,kèwén,TODO
-来到,láidào,TODO
-老人,lǎorén,TODO
-老师,lǎoshī,TODO
-里边,lǐbian,TODO
-楼上,lóu shàng,TODO
-楼下,lóu xià,TODO
-路口,lùkǒu,TODO
-路上,lùshang,TODO
-妈妈/妈,mā(ma),TODO
-马路,mǎlù,TODO
-马上,mǎshàng,TODO
-没事儿,méi∥shìr,TODO
-没有,méi·yǒu,TODO
-妹妹/妹,mèi(mei),TODO
-门口,ménkǒu,TODO
-门票,ménpiào,TODO
-米饭,mǐfàn,TODO
-面包,miànbāo,TODO
-面条儿,miàntiáor,TODO
-明白,míngbai,TODO
-明年,míngnián,TODO
-明天,míngtiān,TODO
-名字,míngzi,TODO
-哪里,nǎ·lǐ,TODO
-哪些,nǎxiē,TODO
-那边,nàbiān,TODO
-那里,nà·lǐ,TODO
-那些,nàxiē,TODO
-奶奶,nǎinai,TODO
-南边,nánbian,TODO
-男孩儿,nánháir,TODO
-男人,nánrén,TODO
-男生,nánshēng,TODO
-你们,nǐmen,TODO
-牛奶,niúnǎi,TODO
-女儿,nǚ’ér,TODO
-女孩儿,nǚháir,TODO
-女人,nǚrén,TODO
-女生,nǚshēng,TODO
-旁边,pángbiān,TODO
-朋友,péngyou,TODO
-起床,qǐ∥chuáng,TODO
-起来,qǐ∥·lái,TODO
-汽车,qìchē,TODO
-钱包,qiánbāo,TODO
-前边,qiánbian,TODO
-前天,qiántiān,TODO
-请假,qǐng∥jià,TODO
-请进,qǐng jìn,TODO
-请问,qǐngwèn,TODO
-请坐,qǐng zuò,TODO
-去年,qùnián,TODO
-认识,rènshi,TODO
-认真,rènzhēn,TODO
-日期,rìqī,TODO
-商场,shāngchǎng,TODO
-商店,shāngdiàn,TODO
-上班,shàng∥bān,TODO
-上边,shàngbian,TODO
-上车,shàng chē,TODO
-上次,shàng cì,TODO
-上课,shàng∥kè,TODO
-上网,shàng∥wǎng,TODO
-上午,shàngwǔ,TODO
-上学,shàng∥xué,TODO
-身上,shēnshang,TODO
-身体,shēntǐ,TODO
-什么,shénme,TODO
-生病,shēng∥bìng,TODO
-生气,shēng∥qì,TODO
-生日,shēngrì,TODO
-时候,shíhou,TODO
-时间,shíjiān,TODO
-手机,shǒujī,TODO
-书包,shūbāo,TODO
-书店,shūdiàn,TODO
-水果,shuǐguǒ,TODO
-睡觉,shuì∥jiào,TODO
-说话,shuō∥huà,TODO
-他们,tāmen,TODO
-她们,tāmen,TODO
-天气,tiānqì,TODO
-听到,tīngdào,TODO
-听见,tīng∥jiàn,TODO
-听写,tīngxiě,TODO
-同学,tóngxué,TODO
-外边,wàibian,TODO
-外国,wàiguó,TODO
-外语,wàiyǔ,TODO
-晚饭,wǎnfàn,TODO
-晚上,wǎnshang,TODO
-网上,wǎng shang,TODO
-网友,wǎngyǒu,TODO
-忘记,wàngjì,TODO
-我们,wǒmen,TODO
-午饭,wǔfàn,TODO
-西边,xībian,TODO
-喜欢,xǐhuan,TODO
-下班,xià∥bān,TODO
-下边,xiàbian,TODO
-下车,xià chē,TODO
-下次,xià cì,TODO
-下课,xià∥kè,TODO
-下午,xiàwǔ,TODO
-下雨,xià yǔ,TODO
-先生,xiānsheng,TODO
-现在,xiànzài,TODO
-小孩儿,xiǎoháir,TODO
-小姐,xiǎojiě,TODO
-小时,xiǎoshí,TODO
-小学,xiǎoxué,TODO
-谢谢,xièxie,TODO
-新年,xīnnián,TODO
-星期,xīngqī,TODO
-休息,xiūxi,TODO
-学生,xué·shēng,TODO
-学习,xuéxí,TODO
-学校,xuéxiào,TODO
-学院,xuéyuàn,TODO
-爷爷,yéye,TODO
-衣服,yīfu,TODO
-医生,yīshēng,TODO
-医院,yīyuàn,TODO
-一半,yíbàn,TODO
-一会儿,yíhuìr,TODO
-一块儿,yíkuàir,TODO
-一下儿,yíxiàr,TODO
-一样,yíyàng,TODO
-一边,yìbiān,TODO
-一点儿,yìdiǎnr,TODO
-一起,yìqǐ,TODO
-一些,yìxiē,TODO
-有的,yǒude,TODO
-有名,yǒu∥míng,TODO
-有用,yǒuyòng,TODO
-右边,yòubian,TODO
-在家,zàijiā,TODO
-再见,zàijiàn,TODO
-早饭,zǎofàn,TODO
-早上,zǎoshang,TODO
-怎么,zěnme,TODO
-找到,zhǎodào,TODO
-这边,zhèbiān,TODO
-这里,zhè·lǐ,TODO
-这些,zhèxiē,TODO
-真的,zhēn de,TODO
-正在,zhèngzài,TODO
-知道,zhī·dào,TODO
-知识,zhīshi,TODO
-中国,Zhōngguó,TODO
-中间,zhōngjiān,TODO
-中文,Zhōngwén,TODO
-中午,zhōngwǔ,TODO
-中学,zhōngxué,TODO
-重要,zhòngyào,TODO
-准备,zhǔnbèi,TODO
-桌子,zhuōzi,TODO
-走路,zǒu∥lù,TODO
-最好,zuìhǎo,TODO
-最后,zuìhòu,TODO
-昨天,zuótiān,TODO
-左边,zuǒbian,TODO
-坐下,zuò xia,TODO
-不客气,bú kèqì,TODO
-打电话,dǎ diànhuà,TODO
-大学生,dàxuéshēng,TODO
-电视机,diànshìjī,TODO
-电影院,diànyǐngyuàn,TODO
-对不起,duìbuqǐ,TODO
-干什么,gàn shénme,TODO
-教学楼,jiàoxuélóu,TODO
-开玩笑,kāi wánxiào,TODO
-没关系,méi guānxi,TODO
-没什么,méi shénme,TODO
-男朋友,nánpéngyou,TODO
-女朋友,nǚpéngyou,TODO
-是不是,shì bu shì,TODO
-图书馆,túshūguǎn,TODO
-洗手间,xǐshǒujiān,TODO
-小朋友,xiǎopéngyǒu,TODO
-小学生,xiǎoxuéshēng,TODO
-星期日,xīngqīrì,TODO
-星期天,xīngqītiān,TODO
-有时候/有时,yǒushí(hou),TODO
-有（一）些,yǒu(yì)xiē,TODO
-中学生,zhōngxuéshēng,TODO
+爱,ài,love;loving;to love
+吧,ba,ba
+八,bā,eight
+白,bái,white
+百,bǎi,hundred
+班,bān,class
+半,bàn,half
+帮,bāng,help;helping;to help
+包,bāo,bag;wrap;wrapping;to wrap
+杯,bēi,cup
+北,běi,north
+本,běn,this;volume
+比,bǐ,compare;comparing;to compare;than
+别,bié,don't
+病,bìng,sick;illness
+不,bù,not
+菜,cài,dish;vegetable
+茶,chá,tea
+差,chà,poor;lacking
+常,cháng,often
+唱,chàng,sing;singing;to sing
+车,chē,car;vehicle
+吃,chī,eat;eating;to eat
+出,chū,out;exit
+穿,chuān,wear;wearing;to wear
+床,chuáng,bed
+次,cì,time;次
+从,cóng,from
+错,cuò,wrong;mistake
+打,dǎ,hit;play;hitting;to hit;to play
+大,dà,big;large
+到,dào,arrive;to arrive;arriving;to
+地,de,de
+的,de,of
+等,děng,wait;waiting;etc
+地,dì,ground;earth
+第,dì,ordinal
+点,diǎn,point;dot;o'clock
+电,diàn,electric;electricity
+东,dōng,east
+动,dòng,move;moving;to move
+都,dōu,all;both
+读,dú,read;reading;to read
+对,duì,correct;right;toward
+多,duō,many;much;more
+饿,è,hungry
+二,èr,two
+饭,fàn,rice;meal
+放,fàng,put;release;putting;to put;to release
+飞,fēi,fly;flying;to fly
+分,fēn,minute;point;divide
+风,fēng,wind
+干,gān,dry
+干,gàn,do;doing;to do
+高,gāo,tall;high
+歌,gē,song
+个,gè,ge
+给,gěi,give;giving;to give;for
+跟,gēn,with;follow;following;to follow
+关,guān,close;closing;to close;shut
+贵,guì,expensive
+国,guó,country;nation
+过,guò,pass;passing;to pass;across
+还,hái,still;yet
+好,hǎo,good;well;fine
+号,hào,number;date
+喝,hē,drink;drinking;to drink
+和,hé,and
+很,hěn,very
+后,hòu,after;behind;back
+花,huā,flower;spend;spending;to spend
+话,huà,speech;words
+坏,huài,bad;broken
+还,huán,return;returning;to return
+回,huí,return;returning;to return;back
+会,huì,can;will;meeting
+几,jǐ,how many;several
+记,jì,remember;remembering;to remember
+家,jiā,home;family
+间,jiān,room;between
+见,jiàn,see;seeing;to see;meet
+教,jiāo,teach;teaching;to teach
+叫,jiào,call;calling;to call
+进,jìn,enter;entering;to enter
+九,jiǔ,nine
+就,jiù,then;just
+开,kāi,open;opening;to open;start
+看,kàn,look;looking;to look;watch;watching;to watch
+考,kǎo,test;testing;exam
+渴,kě,thirsty
+课,kè,lesson;class
+口,kǒu,mouth;opening
+块,kuài,piece;yuan;block
+快,kuài,fast;quick;quickly
+来,lái,come;coming;to come
+老,lǎo,old
+了,le,le
+累,lèi,tired
+冷,lěng,cold
+里,lǐ,inside;in
+两,liǎng,two;both;pair
+零/〇,líng,zero
+六,liù,six
+楼,lóu,floor;building
+路,lù,road;path
+吗,ma,ma
+买,mǎi,buy;buying;to buy
+慢,màn,slow;slowly
+忙,máng,busy
+毛,máo,hair;dime
+没,méi,not;no
+们,men,men
+门,mén,door;gate
+拿,ná,take;taking;to take;hold
+哪,nǎ,which
+哪儿,nǎr,where
+那,nà,that
+那儿,nàr,there
+奶,nǎi,milk;grandma
+南,nán,south
+男,nán,male;man
+难,nán,difficult;hard
+呢,ne,ne
+能,néng,can;able
+你,nǐ,you
+年,nián,year
+您,nín,you
+女,nǚ,female;woman
+跑,pǎo,run;running;to run
+票,piào,ticket
+七,qī,seven
+起,qǐ,rise;rising;get up
+前,qián,front;before;ahead
+钱,qián,money
+请,qǐng,please;invite;inviting;to invite
+球,qiú,ball
+去,qù,go;going;to go
+热,rè,hot;warm
+人,rén,person;people
+日,rì,day;sun
+肉,ròu,meat
+三,sān,three
+山,shān,mountain;hill
+上,shàng,up;above;on
+少,shǎo,few;little;less
+谁,shéi/shuí,who
+十,shí,ten
+事,shì,thing;matter;affair
+是,shì,is;am;are;be
+试,shì,try;trying;to try;test
+手,shǒu,hand
+书,shū,book
+树,shù,tree
+水,shuǐ,water
+睡,shuì,sleep;sleeping;to sleep
+说,shuō,say;saying;to say;speak;speaking;to speak
+四,sì,four
+送,sòng,send;sending;to send;give;deliver
+岁,suì,years old
+他,tā,he;him
+她,tā,she;her
+太,tài,too;very
+天,tiān,sky;day;heaven
+听,tīng,listen;listening;to listen;hear;hearing;to hear
+外,wài,outside;outer
+玩儿,wánr,play;playing;fun
+晚,wǎn,late;evening
+忘,wàng,forget;forgetting;to forget
+问,wèn,ask;asking;to ask
+我,wǒ,I;me
+五,wǔ,five
+西,xī,west
+洗,xǐ,wash;washing;to wash
+下,xià,down;below;under
+先,xiān,first;before
+想,xiǎng,think;thinking;to think;want;miss
+小,xiǎo,small;little;young
+笑,xiào,laugh;laughing;to laugh;smile
+写,xiě,write;writing;to write
+新,xīn,new
+行,xíng,ok;fine;walk;walking
+学,xué,learn;learning;to learn;study;studying;to study
+要,yào,want;need;must
+也,yě,also;too
+页,yè,page
+一,yī,one
+用,yòng,use;using;to use
+有,yǒu,have;having;to have;there is
+右,yòu,right
+雨,yǔ,rain;raining;to rain
+元,yuán,yuan;dollar
+远,yuǎn,far;distant
+月,yuè,month;moon
+再,zài,again
+在,zài,at;in
+早,zǎo,early;morning
+站,zhàn,stand;standing;station;stop
+找,zhǎo,find;finding;to find;look for
+着,zhe,zhe
+这,zhè,this
+真,zhēn,real;really;true;truly
+正,zhèng,just;straight;right now
+这儿,zhèr,here
+中,zhōng,middle;center;China
+重,zhòng,heavy;important
+住,zhù,live;living;stay;staying
+子,zi,zi
+字,zì,character;word
+走,zǒu,walk;walking;to walk;go;leave
+最,zuì,most
+左,zuǒ,left
+做,zuò,do;doing;to do;make;making;to make
+坐,zuò,sit;sitting;to sit
+爱好,àihào,hobby;hobbies
+爸爸/爸,bà(ba),dad;daddy;father
+白天,báitiān,daytime
+半年,bàn nián,half a year
+半天,bàntiān,half a day;a long time
+帮忙,bāng∥máng,help out;helping out
+包子,bāozi,steamed bun
+杯子,bēizi,cup;glass
+北边,běibian,north side
+北京,Běijīng,Beijing
+本子,běnzi,notebook
+别的,biéde,other;another
+别人,bié·rén,other people;others
+病人,bìngrén,patient;sick person
+不大,bú dà,not very;not much
+不对,búduì,incorrect;wrong
+不用,búyòng,no need;needn't
+常常,chángcháng,often;frequently
+唱歌,chàng∥gē,sing a song;singing
+车票,chēpiào,bus ticket;train ticket
+车上,chē shang,on the bus;in the car
+车站,chēzhàn,bus stop;station
+吃饭,chī∥fàn,eat;eating;have a meal
+出来,chū∥·lái,come out;coming out
+出去,chū∥·qù,go out;going out
+打车,dǎ∥chē,take a taxi
+打开,dǎ∥kāi,open;opening;turn on
+打球,dǎ qiú,play ball
+大学,dàxué,university;college
+得到,dé∥dào,get;to get;getting
+弟弟/弟,dì(di),younger brother
+地点,dìdiǎn,location;place
+地方,dìfang,place;area
+地上,dìshang,on the ground
+地图,dìtú,map
+电话,diànhuà,phone;telephone
+电脑,diànnǎo,computer
+电视,diànshì,TV;television
+电影,diànyǐng,movie;film
+东边,dōngbian,east side
+东西,dōngxi,thing;things;stuff
+动作,dòngzuò,action;movement
+读书,dú∥shū,to read;to study;reading
+多少,duōshao,how much;how many
+儿子,érzi,son
+饭店,fàndiàn,restaurant;hotel
+房间,fángjiān,room
+房子,fángzi,house
+放假,fàng∥jià,have a holiday;on vacation
+放学,fàng∥xué,school is over;after school
+非常,fēicháng,extremely;very much
+飞机,fēijī,airplane;plane
+干净,gānjìng,clean
+高兴,gāoxìng,happy;glad
+告诉,gàosu,tell;telling;to tell
+哥哥/哥,gē(ge),older brother
+工人,gōngrén,worker
+工作,gōngzuò,work;working;to work;job
+关上,guānshang,close;to close;shut
+国家,guójiā,country;nation
+国外,guó wài,abroad;overseas
+还是,háishi,or;still
+还有,hái yǒu,also;in addition
+孩子,háizi,child;children;kid;kids
+汉语,Hànyǔ,Chinese language
+汉字,Hànzì,Chinese character
+好吃,hǎochī,delicious;tasty
+好看,hǎokàn,good-looking;pretty
+好听,hǎotīng,pleasant to hear
+好玩儿,hǎowánr,fun;amusing
+后边,hòubian,behind;back side
+后天,hòutiān,day after tomorrow
+回答,huídá,answer;to answer;reply
+回到,huídào,return to;go back to
+回家,huí jiā,go home;going home
+回来,huí∥·lái,come back;coming back
+回去,huí∥·qù,go back;going back
+火车,huǒchē,train
+机场,jīchǎng,airport
+鸡蛋,jīdàn,egg;eggs
+机票,jīpiào,plane ticket
+记得,jìde,to remember;remember
+记住,jìzhù,memorize;to memorize
+家里,jiā li,at home
+家人,jiārén,family
+见面,jiàn∥miàn,to meet;meet up
+姐姐/姐,jiě(jie),older sister
+介绍,jièshào,introduce;introducing;introduction
+今年,jīnnián,this year
+今天,jīntiān,today
+进来,jìn∥·lái,come in;coming in
+进去,jìn∥·qù,go in;going in
+觉得,juéde,feel;to feel;think
+开车,kāi∥chē,to drive;driving
+开会,kāi∥huì,have a meeting
+看病,kàn∥bìng,see a doctor
+看到,kàndào,to see;notice
+看见,kàn∥jiàn,to see;catch sight of
+考试,kǎo∥shì,exam;test;to take a test
+课本,kèběn,textbook
+课文,kèwén,lesson text
+来到,láidào,arrive;to arrive
+老人,lǎorén,old person;elderly
+老师,lǎoshī,teacher
+里边,lǐbian,inside
+楼上,lóu shàng,upstairs
+楼下,lóu xià,downstairs
+路口,lùkǒu,intersection;crossroads
+路上,lùshang,on the road;on the way
+妈妈/妈,mā(ma),mom;mommy;mother
+马路,mǎlù,road;street
+马上,mǎshàng,immediately;right away
+没事儿,méi∥shìr,it's nothing;no problem
+没有,méi·yǒu,don't have;there isn't
+妹妹/妹,mèi(mei),younger sister
+门口,ménkǒu,doorway;entrance
+门票,ménpiào,admission ticket
+米饭,mǐfàn,rice
+面包,miànbāo,bread
+面条儿,miàntiáor,noodles
+明白,míngbai,understand;to understand;clear
+明年,míngnián,next year
+明天,míngtiān,tomorrow
+名字,míngzi,name
+哪里,nǎ·lǐ,where
+哪些,nǎxiē,which ones
+那边,nàbiān,over there
+那里,nà·lǐ,there
+那些,nàxiē,those
+奶奶,nǎinai,grandma;grandmother
+南边,nánbian,south side
+男孩儿,nánháir,boy
+男人,nánrén,man
+男生,nánshēng,male student;boy
+你们,nǐmen,you all;you guys
+牛奶,niúnǎi,milk
+女儿,nǚ'ér,daughter
+女孩儿,nǚháir,girl
+女人,nǚrén,woman
+女生,nǚshēng,female student;girl
+旁边,pángbiān,beside;next to
+朋友,péngyou,friend;friends
+起床,qǐ∥chuáng,get up;getting up;wake up
+起来,qǐ∥·lái,get up;stand up
+汽车,qìchē,car;automobile
+钱包,qiánbāo,wallet;purse
+前边,qiánbian,front;ahead
+前天,qiántiān,day before yesterday
+请假,qǐng∥jià,ask for leave
+请进,qǐng jìn,please come in
+请问,qǐngwèn,excuse me;may I ask
+请坐,qǐng zuò,please sit down
+去年,qùnián,last year
+认识,rènshi,to know;recognize;recognizing
+认真,rènzhēn,serious;seriously;careful
+日期,rìqī,date
+商场,shāngchǎng,shopping mall
+商店,shāngdiàn,shop;store
+上班,shàng∥bān,go to work;at work
+上边,shàngbian,above;on top
+上车,shàng chē,get on;board
+上次,shàng cì,last time
+上课,shàng∥kè,attend class;in class
+上网,shàng∥wǎng,go online;surf the web
+上午,shàngwǔ,morning
+上学,shàng∥xué,go to school
+身上,shēnshang,on the body;on oneself
+身体,shēntǐ,body;health
+什么,shénme,what
+生病,shēng∥bìng,get sick;ill
+生气,shēng∥qì,angry;to get angry
+生日,shēngrì,birthday
+时候,shíhou,time;moment
+时间,shíjiān,time
+手机,shǒujī,cell phone;phone
+书包,shūbāo,schoolbag;backpack
+书店,shūdiàn,bookstore
+水果,shuǐguǒ,fruit
+睡觉,shuì∥jiào,to sleep;go to bed
+说话,shuō∥huà,to speak;to talk;talking
+他们,tāmen,they;them
+她们,tāmen,they;them
+天气,tiānqì,weather
+听到,tīngdào,to hear
+听见,tīng∥jiàn,to hear
+听写,tīngxiě,dictation
+同学,tóngxué,classmate;classmates
+外边,wàibian,outside
+外国,wàiguó,foreign country;foreign
+外语,wàiyǔ,foreign language
+晚饭,wǎnfàn,dinner;supper
+晚上,wǎnshang,evening;night
+网上,wǎng shang,online
+网友,wǎngyǒu,online friend
+忘记,wàngjì,to forget;forget
+我们,wǒmen,we;us
+午饭,wǔfàn,lunch
+西边,xībian,west side
+喜欢,xǐhuan,to like;like;enjoy
+下班,xià∥bān,get off work;leave work
+下边,xiàbian,below;underneath
+下车,xià chē,get off;alight
+下次,xià cì,next time
+下课,xià∥kè,class is over;after class
+下午,xiàwǔ,afternoon
+下雨,xià yǔ,to rain;raining
+先生,xiānsheng,Mr.;sir;gentleman
+现在,xiànzài,now;right now
+小孩儿,xiǎoháir,child;kid
+小姐,xiǎojiě,Miss;young lady
+小时,xiǎoshí,hour;hours
+小学,xiǎoxué,elementary school;primary school
+谢谢,xièxie,thank you;thanks
+新年,xīnnián,new year
+星期,xīngqī,week
+休息,xiūxi,to rest;rest;resting
+学生,xué·shēng,student;students
+学习,xuéxí,to study;to learn;studying;learning
+学校,xuéxiào,school
+学院,xuéyuàn,college;institute
+爷爷,yéye,grandpa;grandfather
+衣服,yīfu,clothes;clothing
+医生,yīshēng,doctor
+医院,yīyuàn,hospital
+一半,yíbàn,half
+一会儿,yíhuìr,a moment;a while
+一块儿,yíkuàir,together
+一下儿,yíxiàr,a little;a bit
+一样,yíyàng,same;alike
+一边,yìbiān,one side;at the same time
+一点儿,yìdiǎnr,a little;a bit
+一起,yìqǐ,together
+一些,yìxiē,some;a few
+有的,yǒude,some
+有名,yǒu∥míng,famous;well-known
+有用,yǒuyòng,useful
+右边,yòubian,right side
+在家,zàijiā,at home
+再见,zàijiàn,goodbye
+早饭,zǎofàn,breakfast
+早上,zǎoshang,morning;early morning
+怎么,zěnme,how;why
+找到,zhǎodào,to find;found
+这边,zhèbiān,this side;over here
+这里,zhè·lǐ,here
+这些,zhèxiē,these
+真的,zhēn de,really;truly
+正在,zhèngzài,currently;in the middle of
+知道,zhī·dào,to know;know
+知识,zhīshi,knowledge
+中国,Zhōngguó,China
+中间,zhōngjiān,middle;between
+中文,Zhōngwén,Chinese
+中午,zhōngwǔ,noon;midday
+中学,zhōngxué,middle school
+重要,zhòngyào,important
+准备,zhǔnbèi,to prepare;prepare;preparing
+桌子,zhuōzi,table;desk
+走路,zǒu∥lù,to walk;walking
+最好,zuìhǎo,best;had better
+最后,zuìhòu,last;final;finally
+昨天,zuótiān,yesterday
+左边,zuǒbian,left side
+坐下,zuò xia,sit down
+不客气,bú kèqì,you're welcome
+打电话,dǎ diànhuà,make a phone call
+大学生,dàxuéshēng,college student
+电视机,diànshìjī,television set
+电影院,diànyǐngyuàn,movie theater;cinema
+对不起,duìbuqǐ,sorry;excuse me
+干什么,gàn shénme,what are you doing
+教学楼,jiàoxuélóu,classroom building
+开玩笑,kāi wánxiào,to joke;joking;kidding
+没关系,méi guānxi,it doesn't matter;no problem
+没什么,méi shénme,it's nothing;no big deal
+男朋友,nánpéngyou,boyfriend
+女朋友,nǚpéngyou,girlfriend
+是不是,shì bu shì,is it;isn't it
+图书馆,túshūguǎn,library
+洗手间,xǐshǒujiān,bathroom;restroom
+小朋友,xiǎopéngyǒu,children;kids
+小学生,xiǎoxuéshēng,elementary student
+星期日,xīngqīrì,Sunday
+星期天,xīngqītiān,Sunday
+有时候/有时,yǒushí(hou),sometimes
+有（一）些,yǒu(yì)xiē,somewhat;a little
+中学生,zhōngxuéshēng,middle school student
+# Past tense forms (verb + 了)
+爱了,àile,loved
+帮了,bāngle,helped
+吃了,chīle,ate
+穿了,chuānle,wore
+打了,dǎle,hit;played
+到了,dàole,arrived
+动了,dòngle,moved
+读了,dúle,read
+飞了,fēile,flew
+放了,fàngle,put;released
+干了,gànle,did
+给了,gěile,gave
+跟了,gēnle,followed
+关了,guānle,closed;shut
+过了,guòle,passed
+喝了,hēle,drank
+花了,huāle,spent
+还了,huánle,returned
+回了,huíle,returned
+记了,jìle,remembered
+见了,jiànle,saw;met
+教了,jiāole,taught
+叫了,jiàole,called
+进了,jìnle,entered
+开了,kāile,opened
+看了,kànle,looked;watched
+来了,láile,came
+买了,mǎile,bought
+拿了,nále,took;held
+跑了,pǎole,ran
+请了,qǐngle,invited
+去了,qùle,went
+说了,shuōle,said;spoke
+送了,sòngle,sent;gave
+听了,tīngle,listened;heard
+忘了,wàngle,forgot
+问了,wènle,asked
+洗了,xǐle,washed
+想了,xiǎngle,thought
+笑了,xiàole,laughed;smiled
+写了,xiěle,wrote
+学了,xuéle,learned;studied
+用了,yòngle,used
+找了,zhǎole,found
+走了,zǒule,walked;left
+做了,zuòle,did;made
+坐了,zuòle,sat
+喜欢了,xǐhuanle,liked
+工作了,gōngzuòle,worked
+准备了,zhǔnbèile,prepared
+介绍了,jièshàole,introduced
+认识了,rènshile,recognized;met
+回答了,huídále,answered
+告诉了,gàosule,told

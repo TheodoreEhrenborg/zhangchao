@@ -30,7 +30,8 @@ Loaded dynamically from CSV file.")
 
 (defun english-chinese-parse-csv-line (line)
   "Parse a CSV line and return (chinese pinyin english) or nil if invalid."
-  (when (and line (not (string-empty-p line)))
+  (when (and line (not (string-empty-p line))
+             (not (string-prefix-p "#" line)))
     (let ((parts (split-string line "," t)))
       (when (>= (length parts) 3)
         (list (nth 0 parts) (nth 1 parts) (nth 2 parts))))))
@@ -59,10 +60,12 @@ Loaded dynamically from CSV file.")
                 (let* ((chinese (nth 0 parsed))
                        (pinyin (nth 1 parsed))
                        (english (nth 2 parsed)))
-                  ;; Use the full English translation as the key
+                  ;; Split on semicolons to support multiple English keys per word
                   (when (and english (not (string-empty-p english)))
-                    (push (cons english chinese) chinese-alist)
-                    (push (cons english pinyin) pinyin-alist)))))
+                    (dolist (eng (split-string english ";" t "[ \t]+"))
+                      (when (not (string-empty-p eng))
+                        (push (cons eng chinese) chinese-alist)
+                        (push (cons eng pinyin) pinyin-alist)))))))
             (forward-line 1)))))
     ;; Sort by English key length (longest first) to prioritize longer matches
     (setq english-chinese-word-alist
