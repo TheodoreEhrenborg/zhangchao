@@ -3,7 +3,7 @@
 # License: CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/)
 # Format: chinese,pinyin,english
 爱,ài,love;loving;to love
-吧,ba,ba
+吧,ba,right;okay
 八,bā,eight
 白,bái,white
 百,bǎi,hundred
@@ -28,13 +28,13 @@
 出,chū,out;exit
 穿,chuān,wear;wearing;to wear
 床,chuáng,bed
-次,cì,time;次
+次,cì,times
 从,cóng,from
 错,cuò,wrong;mistake
 打,dǎ,hit;play;hitting;to hit;to play
 大,dà,big;large
-到,dào,arrive;to arrive;arriving;to
-地,de,de
+到,dào,arrive;to arrive;arriving
+地,de,ly
 的,de,of
 等,děng,wait;waiting;etc
 地,dì,ground;earth
@@ -58,7 +58,7 @@
 干,gàn,do;doing;to do
 高,gāo,tall;high
 歌,gē,song
-个,gè,ge
+个,gè,a;an
 给,gěi,give;giving;to give;for
 跟,gēn,with;follow;following;to follow
 关,guān,close;closing;to close;shut
@@ -98,7 +98,7 @@
 快,kuài,fast;quick;quickly
 来,lái,come;coming;to come
 老,lǎo,old
-了,le,le
+了,le,already
 累,lèi,tired
 冷,lěng,cold
 里,lǐ,inside;in
@@ -107,13 +107,13 @@
 六,liù,six
 楼,lóu,floor;building
 路,lù,road;path
-吗,ma,ma
+吗,ma,whether
 买,mǎi,buy;buying;to buy
 慢,màn,slow;slowly
 忙,máng,busy
 毛,máo,hair;dime
 没,méi,not;no
-们,men,men
+们,men,plural
 门,mén,door;gate
 拿,ná,take;taking;to take;hold
 哪,nǎ,which
@@ -124,7 +124,7 @@
 南,nán,south
 男,nán,male;man
 难,nán,difficult;hard
-呢,ne,ne
+呢,ne,what about
 能,néng,can;able
 你,nǐ,you
 年,nián,year
@@ -200,7 +200,7 @@
 早,zǎo,early;morning
 站,zhàn,stand;standing;station;stop
 找,zhǎo,find;finding;to find;look for
-着,zhe,zhe
+着,zhe,ongoing
 这,zhè,this
 真,zhēn,real;really;true;truly
 正,zhèng,just;straight;right now
@@ -208,7 +208,7 @@
 中,zhōng,middle;center;China
 重,zhòng,heavy;important
 住,zhù,live;living;stay;staying
-子,zi,zi
+子,zi,child;seed
 字,zì,character;word
 走,zǒu,walk;walking;to walk;go;leave
 最,zuì,most
@@ -457,7 +457,7 @@
 早饭,zǎofàn,breakfast
 早上,zǎoshang,morning;early morning
 怎么,zěnme,how;why
-找到,zhǎodào,to find;found
+找到,zhǎodào,to find
 这边,zhèbiān,this side;over here
 这里,zhè·lǐ,here
 这些,zhèxiē,these
