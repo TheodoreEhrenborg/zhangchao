@@ -19,8 +19,8 @@
 ;;; Code:
 
 (defvar zhangchao-csv-files
-  (list (expand-file-name "~/.mandarin-data/hsk1.csv")
-        (expand-file-name "~/.mandarin-data/hsk2.csv"))
+  (list (expand-file-name "hsk1_v3.csv"
+                          (file-name-directory (or load-file-name buffer-file-name))))
   "List of HSK CSV files containing Chinese vocabulary.")
 
 (defvar zhangchao-word-alist nil

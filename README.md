@@ -15,11 +15,9 @@ A minor mode for Emacs that replaces English words with Chinese characters or Pi
 
 ## Setup
 
-Create HSK vocabulary CSV files at:
-- `~/.mandarin-data/hsk1.csv`
-- `~/.mandarin-data/hsk2.csv`
+The package ships with `hsk1_v3.csv` (HSK 3.0 Level 1, 500 words). It is loaded automatically from the same directory as `zhangchao.el`.
 
-Each CSV should have the format: `chinese,pinyin,english` (English supports semicolon-separated synonyms). Lines starting with `#` are comments.
+To add more vocabulary, set `zhangchao-csv-files` to a list of CSV paths. Each CSV should have the format: `chinese,pinyin,english` (English supports semicolon-separated synonyms). Lines starting with `#` are comments.
 
 ## Public API
 
