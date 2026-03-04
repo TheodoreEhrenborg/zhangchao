@@ -2,7 +2,7 @@
 
 A minor mode for Emacs that replaces English words with Chinese characters or Pinyin.
 
-> "La mer monte." - Alexandre Grothendieck
+> "La mer qui monte." - Alexandre Grothendieck
 
 ## Installation
 
