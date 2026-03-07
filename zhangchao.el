@@ -134,20 +134,20 @@ Loaded dynamically from CSV file.")
              (word-regexp (concat "\\b\\(?:"
                                  (mapconcat #'car word-alist "\\|")
                                  "\\)\\b")))
-        (while (re-search-forward word-regexp limit t)
-          (let* ((word (match-string 0))
-                 (replacement (cdr (assoc word word-alist))))
-            (when replacement
-              (let ((start (match-beginning 0))
-                    (end (match-end 0)))
-                (add-text-properties start end
-                                   '(font-lock-fontified t))
-                ;; Use overlay with display property for both Chinese and Pinyin
-                (let ((overlay (make-overlay start end)))
-                  (overlay-put overlay 'display replacement)
-                  (overlay-put overlay 'zhangchao-overlay t))
-                (backward-char 1)
-                (throw 'match t)))))
+        (let ((case-fold-search t))
+          (while (re-search-forward word-regexp limit t)
+            (let* ((word (downcase (match-string 0)))
+                   (replacement (cdr (assoc word word-alist))))
+              (when replacement
+                (let ((start (match-beginning 0))
+                      (end (match-end 0)))
+                  (add-text-properties start end
+                                     '(font-lock-fontified t))
+                  (let ((overlay (make-overlay start end)))
+                    (overlay-put overlay 'display replacement)
+                    (overlay-put overlay 'zhangchao-overlay t))
+                  (backward-char 1)
+                  (throw 'match t))))))
         nil))))
 
 ;;;###autoload
