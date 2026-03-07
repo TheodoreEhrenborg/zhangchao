@@ -60,8 +60,9 @@ Loaded dynamically from CSV file.")
                   (when (and english (not (string-empty-p english)))
                     (dolist (eng (split-string english ";" t "[ \t]+"))
                       (when (not (string-empty-p eng))
-                        (push (cons eng chinese) chinese-alist)
-                        (push (cons eng pinyin) pinyin-alist)))))))
+                        (let ((eng-lower (downcase eng)))
+                          (push (cons eng-lower chinese) chinese-alist)
+                          (push (cons eng-lower pinyin) pinyin-alist))))))))
             (forward-line 1)))))
     ;; Sort by English key length (longest first) to prioritize longer matches
     (setq zhangchao-word-alist
