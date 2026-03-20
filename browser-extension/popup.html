@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>涨潮 Zhangchao</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      width: 300px;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-size: 14px;
+    }
+
+    header {
+      background: #16213e;
+      padding: 14px 16px;
+      border-bottom: 1px solid #0f3460;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    header h1 { font-size: 18px; font-weight: 700; color: #e94560; }
+    header span { font-size: 12px; color: #888; }
+
+    section {
+      padding: 14px 16px;
+      border-bottom: 1px solid #0f3460;
+    }
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    /* Mode buttons */
+    .mode-group {
+      display: flex;
+      gap: 6px;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 8px 4px;
+      border: 1px solid #0f3460;
+      border-radius: 6px;
+      background: #16213e;
+      color: #aaa;
+      cursor: pointer;
+      font-size: 13px;
+      text-align: center;
+      transition: all 0.15s;
+    }
+    .mode-btn:hover { border-color: #e94560; color: #e0e0e0; }
+    .mode-btn.active {
+      background: #e94560;
+      border-color: #e94560;
+      color: #fff;
+      font-weight: 600;
+    }
+    .mode-btn .mode-icon { display: block; font-size: 16px; margin-bottom: 2px; }
+
+    /* Blacklist */
+    .site-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .site-row code {
+      flex: 1;
+      font-family: monospace;
+      font-size: 12px;
+      color: #a0c4ff;
+      background: #16213e;
+      padding: 4px 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    button.small {
+      padding: 4px 10px;
+      border-radius: 5px;
+      border: 1px solid #0f3460;
+      background: #16213e;
+      color: #e0e0e0;
+      cursor: pointer;
+      font-size: 12px;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    button.small:hover { border-color: #e94560; }
+    button.small.danger { border-color: #e94560; color: #e94560; }
+    button.small.danger:hover { background: #e94560; color: #fff; }
+    button.small.action { border-color: #4caf50; color: #4caf50; }
+    button.small.action:hover { background: #4caf50; color: #fff; }
+
+    #add-form {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    #add-form input {
+      flex: 1;
+      padding: 5px 8px;
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 5px;
+      color: #e0e0e0;
+      font-size: 12px;
+    }
+    #add-form input::placeholder { color: #555; }
+    #add-form input:focus { outline: none; border-color: #e94560; }
+
+    #blacklist-items { list-style: none; }
+    #blacklist-items li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px solid #0f3460;
+      font-size: 12px;
+      font-family: monospace;
+      color: #a0c4ff;
+    }
+    #blacklist-items li:last-child { border-bottom: none; }
+    #blacklist-empty { font-size: 12px; color: #555; font-style: italic; }
+
+    .status-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .status-badge.blocked { background: #5c2222; color: #ff6b6b; }
+    .status-badge.active  { background: #1a3a1a; color: #4caf50; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>涨潮</h1>
+    <span>Zhangchao</span>
+  </header>
+
+  <section>
+    <div class="section-label">Display Mode</div>
+    <div class="mode-group">
+      <button class="mode-btn" data-mode="chinese">
+        <span class="mode-icon">汉</span>Chinese
+      </button>
+      <button class="mode-btn" data-mode="pinyin">
+        <span class="mode-icon">pīn</span>Pinyin
+      </button>
+      <button class="mode-btn" data-mode="off">
+        <span class="mode-icon">Aa</span>Off
+      </button>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Current Site</div>
+    <div class="site-row">
+      <code id="current-host">—</code>
+      <span id="site-status"></span>
+      <button class="small" id="toggle-site-btn">…</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Blacklist</div>
+    <div id="add-form">
+      <input type="text" id="add-input" placeholder="example.com">
+      <button class="small action" id="add-btn">Add</button>
+    </div>
+    <ul id="blacklist-items"></ul>
+    <div id="blacklist-empty" style="display:none">No sites blacklisted.</div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
