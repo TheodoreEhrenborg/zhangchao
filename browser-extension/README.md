@@ -19,24 +19,130 @@ you browse the web.
 - **Dynamic content support** — a `MutationObserver` handles text added after page load
   (SPAs, infinite scroll, etc.)
 
-## Installation
+## Local installation (development / testing)
 
-### Chrome / Chromium / Edge (Manifest V3)
+### Chrome / Chromium / Edge
 
 1. Open `chrome://extensions`
 2. Enable **Developer mode** (top-right toggle)
 3. Click **Load unpacked** and select this `browser-extension/` folder
 4. The 涨潮 icon appears in your toolbar — click it to control the extension
 
-### Firefox (Manifest V3, requires Firefox 109+)
+### Firefox (requires Firefox 109+)
 
 1. Open `about:debugging#/runtime/this-firefox`
 2. Click **Load Temporary Add-on…**
 3. Navigate to this folder and select `manifest.json`
 
-For a permanent Firefox install, the extension needs to be signed via
-[AMO](https://addons.mozilla.org/) or you can set `xpinstall.signatures.required = false`
-in `about:config` on Firefox Developer Edition / Nightly.
+> **Note:** Temporary add-ons are removed when Firefox restarts. For a permanent
+> local install without store publishing, see the Firefox signing section below.
+
+---
+
+## Testing checklist
+
+### In Chrome
+
+- [ ] Load the unpacked extension (steps above)
+- [ ] Visit a content-heavy page (e.g. a Wikipedia article) — common words like "love",
+      "help", "north" should appear as Chinese characters
+- [ ] Click the toolbar icon and switch to **Pinyin** — replaced words should change to
+      romanised pinyin
+- [ ] Switch to **Off** — original English text should be restored
+- [ ] Hover over a replaced word — tooltip should show pinyin and the original English word
+- [ ] Open the popup, add `mail.google.com` to the blacklist, navigate there — no
+      replacements should occur
+- [ ] Confirm ALL-CAPS strings like "HTML" or "URL" are not replaced
+- [ ] Open browser DevTools console — confirm no errors are logged
+
+### In Firefox
+
+- [ ] Load the temporary add-on (steps above)
+- [ ] Repeat all Chrome checks above
+- [ ] Confirm the popup renders correctly (Firefox uses its own popup styling engine)
+- [ ] Confirm that `chrome.*` APIs work — the extension uses the `chrome` namespace
+      which Firefox supports as an alias for `browser.*` since Firefox 109
+
+---
+
+## Publishing
+
+### Chrome Web Store
+
+1. **Create a developer account** — go to the
+   [Chrome Web Store Developer Dashboard](https://chrome.google.com/webstore/devconsole)
+   and pay the one-time $5 registration fee if you haven't already.
+
+2. **Package the extension** — zip the contents of `browser-extension/` (not the folder
+   itself; the zip root should contain `manifest.json`):
+   ```bash
+   cd browser-extension
+   zip -r ../zhangchao-chrome.zip .
+   ```
+
+3. **Create a new item** — click **Add new item** in the dashboard and upload
+   `zhangchao-chrome.zip`.
+
+4. **Fill in the store listing:**
+   - Name: `涨潮 Zhangchao`
+   - Short description (≤132 chars): *Replace English words with Chinese characters or Pinyin as you browse — hover for pinyin tooltips*
+   - Category: Education
+   - Language: English
+   - Screenshots: at least one 1280×800 or 640×400 screenshot (required)
+   - Privacy policy: required if you declare any permissions — `storage` and `activeTab`
+     are used; a simple privacy policy stating no data is collected externally suffices
+
+5. **Submit for review** — review typically takes a few days. The extension uses only
+   `storage` and `activeTab` (no broad host permissions at runtime), which keeps the
+   review scope minimal.
+
+---
+
+### Firefox Add-ons (AMO)
+
+Firefox requires extensions to be **signed by Mozilla** before they can be installed
+permanently by regular users.
+
+#### Option A — Publish on addons.mozilla.org (recommended)
+
+1. **Create a Firefox account** at [accounts.firefox.com](https://accounts.firefox.com)
+   if you don't have one.
+
+2. **Submit the extension** at [addons.mozilla.org/developers](https://addons.mozilla.org/en-US/developers/):
+   - Click **Submit a New Add-on** → **On this site** (public listing)
+   - Upload a zip of the `browser-extension/` folder (same zip as Chrome works)
+
+3. **Fill in the listing:**
+   - Name, summary, description, screenshots (at least one required)
+   - Categories: Appearance + Education
+   - The source code upload step is optional but recommended for open-source projects
+
+4. **Automated validation** runs immediately; manual review follows (days to weeks for
+   new add-ons). Once approved the extension is signed and publicly listed.
+
+#### Option B — Self-distributed signed `.xpi` (no public listing)
+
+Use Mozilla's [web-ext](https://github.com/mozilla/web-ext) tool to sign the extension
+for self-distribution without a public AMO listing. Requires an AMO account and API key.
+
+```bash
+npm install -g web-ext
+
+# Get API credentials from https://addons.mozilla.org/en-US/developers/addon/api/key/
+web-ext sign \
+  --source-dir ./browser-extension \
+  --api-key $AMO_JWT_ISSUER \
+  --api-secret $AMO_JWT_SECRET \
+  --channel unlisted
+```
+
+This produces a signed `.xpi` file that users can install permanently via
+**about:addons → Install Add-on From File**.
+
+#### Option C — Firefox Developer Edition / Nightly (unsigned, dev only)
+
+Set `xpinstall.signatures.required = false` in `about:config`. This bypasses signing
+entirely but only works on Developer Edition and Nightly builds — not on release Firefox.
 
 ## Usage
 
