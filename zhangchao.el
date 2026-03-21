@@ -19,7 +19,7 @@
 ;;; Code:
 
 (defvar zhangchao-csv-files
-  (list (expand-file-name "hsk1_v3.csv"
+  (list (expand-file-name "browser-extension/hsk1_v3.csv"
                           (file-name-directory (or load-file-name buffer-file-name))))
   "List of HSK CSV files containing Chinese vocabulary.")
 
