@@ -7,20 +7,12 @@ async function setStorage(obj) {
   return new Promise(resolve => chrome.storage.sync.set(obj, resolve));
 }
 
-// ── Mode buttons ──────────────────────────────────────────────────────────
+// ── Enable/disable toggle ─────────────────────────────────────────────────
 
-function setActiveModeBtn(mode) {
-  document.querySelectorAll('.mode-btn').forEach(btn => {
-    btn.classList.toggle('active', btn.dataset.mode === mode);
-  });
-}
+const toggle = document.getElementById('enabled-toggle');
 
-document.querySelectorAll('.mode-btn').forEach(btn => {
-  btn.addEventListener('click', async () => {
-    const mode = btn.dataset.mode;
-    await setStorage({ displayMode: mode });
-    setActiveModeBtn(mode);
-  });
+toggle.addEventListener('change', async () => {
+  await setStorage({ enabled: toggle.checked });
 });
 
 // ── Current site & blacklist toggle ──────────────────────────────────────
@@ -31,8 +23,7 @@ async function getCurrentHost() {
   return new Promise(resolve => {
     chrome.tabs.query({ active: true, currentWindow: true }, tabs => {
       try {
-        const url = new URL(tabs[0].url);
-        resolve(url.hostname);
+        resolve(new URL(tabs[0].url).hostname);
       } catch {
         resolve('');
       }
@@ -41,9 +32,9 @@ async function getCurrentHost() {
 }
 
 async function renderSiteSection(blacklist) {
-  const hostEl     = document.getElementById('current-host');
-  const statusEl   = document.getElementById('site-status');
-  const toggleBtn  = document.getElementById('toggle-site-btn');
+  const hostEl    = document.getElementById('current-host');
+  const statusEl  = document.getElementById('site-status');
+  const toggleBtn = document.getElementById('toggle-site-btn');
 
   hostEl.textContent = currentHost || '(unknown)';
 
@@ -65,7 +56,7 @@ async function renderSiteSection(blacklist) {
   toggleBtn.className   = blocked ? 'small action' : 'small danger';
 
   toggleBtn.onclick = async () => {
-    const result  = await getStorage('blacklist');
+    const result = await getStorage('blacklist');
     let list = result.blacklist || [];
     if (blocked) {
       list = list.filter(d => d.trim().toLowerCase() !== currentHost);
@@ -97,7 +88,7 @@ function renderBlacklist(list) {
     rm.textContent = '✕';
     rm.style.padding = '2px 7px';
     rm.addEventListener('click', async () => {
-      const r2 = await getStorage('blacklist');
+      const r2      = await getStorage('blacklist');
       const newList = (r2.blacklist || []).filter(d => d !== domain);
       await setStorage({ blacklist: newList });
       renderBlacklist(newList);
@@ -123,20 +114,16 @@ document.getElementById('add-btn').addEventListener('click', async () => {
   renderSiteSection(list);
 });
 
-document.getElementById('add-input').addEventListener('keydown', (e) => {
+document.getElementById('add-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') document.getElementById('add-btn').click();
 });
 
 // ── Initialise ────────────────────────────────────────────────────────────
 
 (async () => {
-  const result = await getStorage(['displayMode', 'blacklist']);
-  const mode   = result.displayMode || 'chinese';
-  const list   = result.blacklist   || [];
-
-  setActiveModeBtn(mode);
-  renderBlacklist(list);
-
+  const result = await getStorage(['enabled', 'blacklist']);
+  toggle.checked = result.enabled !== false; // default on
+  renderBlacklist(result.blacklist || []);
   currentHost = await getCurrentHost();
-  renderSiteSection(list);
+  renderSiteSection(result.blacklist || []);
 })();

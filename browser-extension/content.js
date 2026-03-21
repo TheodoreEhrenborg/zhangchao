@@ -1,12 +1,9 @@
 /**
  * Zhangchao browser extension — content script
  *
- * Replicates the logic of zhangchao.el:
- *  - Replaces English words with Chinese characters or Pinyin
- *  - Skips ALL-CAPS words (likely acronyms)
- *  - Shows a tooltip with pinyin + English when hovering over a replaced word
- *  - Respects a user-configurable blacklist of hostnames
- *  - Reacts to mode changes (chinese / pinyin / off) from the popup in real time
+ * When enabled, replaces English words with Chinese characters as you browse.
+ * Hover over any replaced word to see its pinyin and original English in a tooltip.
+ * Respects a user-configurable blacklist of hostnames.
  */
 
 (function () {
@@ -15,8 +12,8 @@
 
   // ── State ──────────────────────────────────────────────────────────────────
 
-  let displayMode = 'chinese'; // 'chinese' | 'pinyin' | 'off'
-  let wordMap = {};            // englishLower → { chinese, pinyin }
+  let enabled = true;
+  let wordMap = {};   // englishLower → { chinese, pinyin }
   let wordRegex = null;
   let vocabLoaded = false;
   let domProcessed = false;
@@ -32,32 +29,30 @@
       const line = rawLine.trim();
       if (!line || line.startsWith('#')) continue;
       // Format: chinese,pinyin,english1;english2;...
-      // Use indexOf to avoid splitting on commas inside the English field
-      const first = line.indexOf(',');
+      const first  = line.indexOf(',');
       const second = line.indexOf(',', first + 1);
       if (first === -1 || second === -1) continue;
-      const chinese = line.slice(0, first).trim();
-      const pinyin  = line.slice(first + 1, second).trim();
+      const chinese      = line.slice(0, first).trim();
+      const pinyin       = line.slice(first + 1, second).trim();
       const englishField = line.slice(second + 1).trim();
       for (const eng of englishField.split(';')) {
         const engLower = eng.trim().toLowerCase();
-        if (engLower) {
-          wordMap[engLower] = { chinese, pinyin };
-        }
+        if (engLower) wordMap[engLower] = { chinese, pinyin };
       }
     }
     // Sort by length descending so longer phrases match before shorter ones
-    const sorted = Object.keys(wordMap).sort((a, b) => b.length - a.length);
+    const sorted  = Object.keys(wordMap).sort((a, b) => b.length - a.length);
     const escaped = sorted.map(w => w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
     wordRegex = new RegExp(`\\b(${escaped.join('|')})\\b`, 'gi');
     vocabLoaded = true;
   }
 
   // ── Case-sensitivity rules (mirrors the elisp logic) ──────────────────────
+  // lowercase, Title-case, and single capital → replace
+  // ALL-CAPS (acronyms like HTML, URL) → skip
 
   function shouldReplace(word) {
     if (!wordMap[word.toLowerCase()]) return false;
-    // Skip ALL-CAPS words longer than one character (e.g. acronyms like "HTML")
     if (word.length > 1 && word === word.toUpperCase() && /[A-Z]/.test(word)) return false;
     return true;
   }
@@ -121,9 +116,9 @@
   }
 
   function escapeHtml(str) {
-    return str.replace(/[&<>"']/g, c => ({
-      '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
-    }[c]));
+    return str.replace(/[&<>"']/g, c =>
+      ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])
+    );
   }
 
   // ── DOM processing ─────────────────────────────────────────────────────────
@@ -134,7 +129,7 @@
   ]);
 
   function processSubtree(root) {
-    if (!vocabLoaded || displayMode === 'off') return;
+    if (!vocabLoaded) return;
     const walker = document.createTreeWalker(
       root,
       NodeFilter.SHOW_TEXT,
@@ -157,14 +152,12 @@
   }
 
   function replaceInTextNode(node) {
-    const text = node.nodeValue;
+    const text  = node.nodeValue;
     const regex = new RegExp(wordRegex.source, 'gi');
     const matches = [];
     let m;
     while ((m = regex.exec(text)) !== null) {
-      if (shouldReplace(m[0])) {
-        matches.push({ index: m.index, word: m[0] });
-      }
+      if (shouldReplace(m[0])) matches.push({ index: m.index, word: m[0] });
     }
     if (matches.length === 0) return;
 
@@ -176,13 +169,13 @@
       }
       const { chinese, pinyin } = wordMap[word.toLowerCase()];
       const span = document.createElement('span');
-      span.className = 'zhangchao-word';
-      span.dataset.original = word;
+      span.className         = 'zhangchao-word';
+      span.dataset.original  = word;
       span.dataset.chinese   = chinese;
       span.dataset.pinyin    = pinyin;
       span.dataset.english   = word.toLowerCase();
-      span.textContent = displayMode === 'chinese' ? chinese : pinyin;
-      span.style.cssText = 'cursor:help;border-bottom:1px dotted rgba(120,120,120,0.6);';
+      span.textContent       = chinese;
+      span.style.cssText     = 'cursor:help;border-bottom:1px dotted rgba(120,120,120,0.6);';
       frag.appendChild(span);
       cursor = index + word.length;
     }
@@ -192,28 +185,10 @@
     node.parentNode.replaceChild(frag, node);
   }
 
-  // ── Display mode updates ───────────────────────────────────────────────────
+  // ── Enable / disable ───────────────────────────────────────────────────────
 
-  function applyDisplayMode(mode) {
-    const prev = displayMode;
-    displayMode = mode;
-
-    if (mode === 'off') {
-      // Restore all spans to their original text
-      for (const span of document.querySelectorAll('.zhangchao-word')) {
-        span.replaceWith(document.createTextNode(span.dataset.original));
-      }
-      domProcessed = false;
-      return;
-    }
-
-    if (domProcessed) {
-      // Just swap the displayed text in existing spans
-      for (const span of document.querySelectorAll('.zhangchao-word')) {
-        span.textContent = mode === 'chinese' ? span.dataset.chinese : span.dataset.pinyin;
-      }
-    }
-
+  function enable() {
+    enabled = true;
     if (!domProcessed) {
       ensureTooltip();
       processSubtree(document.body);
@@ -222,17 +197,23 @@
     }
   }
 
+  function disable() {
+    enabled = false;
+    for (const span of document.querySelectorAll('.zhangchao-word')) {
+      span.replaceWith(document.createTextNode(span.dataset.original));
+    }
+    domProcessed = false;
+  }
+
   // ── MutationObserver for dynamic content ──────────────────────────────────
 
   function startObserver() {
     if (domObserver) return;
     domObserver = new MutationObserver((mutations) => {
-      if (displayMode === 'off') return;
+      if (!enabled) return;
       for (const mut of mutations) {
         for (const node of mut.addedNodes) {
-          if (node.nodeType === Node.ELEMENT_NODE) {
-            processSubtree(node);
-          }
+          if (node.nodeType === Node.ELEMENT_NODE) processSubtree(node);
         }
       }
     });
@@ -258,16 +239,15 @@
 
     await loadVocabulary();
 
-    const result = await chrome.storage.sync.get('displayMode');
-    const mode = result.displayMode || 'chinese';
-
-    applyDisplayMode(mode);
+    const result = await chrome.storage.sync.get('enabled');
+    // Default to enabled
+    if (result.enabled !== false) enable();
   }
 
-  // React to popup changes in real time
+  // React to popup toggle in real time
   chrome.storage.onChanged.addListener((changes) => {
-    if (changes.displayMode && vocabLoaded) {
-      applyDisplayMode(changes.displayMode.newValue);
+    if (changes.enabled && vocabLoaded) {
+      changes.enabled.newValue !== false ? enable() : disable();
     }
   });
 

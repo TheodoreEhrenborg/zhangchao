@@ -6,7 +6,7 @@ you browse the web.
 
 ## Features
 
-- **Three display modes** — Chinese characters (汉), Pinyin (pīn), or Off
+- **On/off toggle** — enable or disable replacement from the popup
 - **Hover tooltips** — mouse over any replaced word to see its Pinyin and original English
 - **Case-aware matching** — mirrors the Emacs logic:
   - lowercase words → replaced
@@ -150,9 +150,7 @@ Click the toolbar icon to open the popup:
 
 | Control | Description |
 |---------|-------------|
-| **汉 Chinese** | Replace words with Chinese characters |
-| **pīn Pinyin** | Replace words with Pinyin romanisation |
-| **Aa Off** | Restore original English text |
+| **Toggle** | Enable or disable Chinese replacement on all sites |
 | **Block / Remove** | Add or remove the current site from the blacklist |
 | **Blacklist input** | Manually type a domain to block (e.g. `gmail.com`) |
 
