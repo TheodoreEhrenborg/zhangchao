@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>涨潮 Zhangchao</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      width: 280px;
+      background: #1a1a2e;
+      color: #e0e0e0;
+      font-size: 14px;
+    }
+
+    header {
+      background: #16213e;
+      padding: 12px 16px;
+      border-bottom: 1px solid #0f3460;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    header h1 { font-size: 18px; font-weight: 700; color: #e94560; }
+    header span { font-size: 12px; color: #888; }
+
+    section {
+      padding: 12px 16px;
+      border-bottom: 1px solid #0f3460;
+    }
+    section:last-child { border-bottom: none; }
+
+    .section-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #888;
+      margin-bottom: 10px;
+    }
+
+    /* Toggle switch */
+    .toggle-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .toggle-label { font-size: 14px; }
+    .toggle-label small { display: block; color: #888; font-size: 11px; margin-top: 2px; }
+
+    .switch {
+      position: relative;
+      width: 44px;
+      height: 24px;
+      flex-shrink: 0;
+    }
+    .switch input { opacity: 0; width: 0; height: 0; }
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: #333;
+      border-radius: 24px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .slider::before {
+      content: '';
+      position: absolute;
+      width: 18px;
+      height: 18px;
+      left: 3px;
+      top: 3px;
+      background: #aaa;
+      border-radius: 50%;
+      transition: transform 0.2s, background 0.2s;
+    }
+    input:checked + .slider { background: #e94560; }
+    input:checked + .slider::before { transform: translateX(20px); background: #fff; }
+
+    /* Blacklist */
+    .site-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .site-row code {
+      flex: 1;
+      font-family: monospace;
+      font-size: 12px;
+      color: #a0c4ff;
+      background: #16213e;
+      padding: 4px 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    button.small {
+      padding: 4px 10px;
+      border-radius: 5px;
+      border: 1px solid #0f3460;
+      background: #16213e;
+      color: #e0e0e0;
+      cursor: pointer;
+      font-size: 12px;
+      white-space: nowrap;
+      transition: all 0.15s;
+    }
+    button.small:hover { border-color: #e94560; }
+    button.small.danger { border-color: #e94560; color: #e94560; }
+    button.small.danger:hover { background: #e94560; color: #fff; }
+    button.small.action { border-color: #4caf50; color: #4caf50; }
+    button.small.action:hover { background: #4caf50; color: #fff; }
+
+    #add-form {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+    #add-form input {
+      flex: 1;
+      padding: 5px 8px;
+      background: #16213e;
+      border: 1px solid #0f3460;
+      border-radius: 5px;
+      color: #e0e0e0;
+      font-size: 12px;
+    }
+    #add-form input::placeholder { color: #555; }
+    #add-form input:focus { outline: none; border-color: #e94560; }
+
+    #blacklist-items { list-style: none; }
+    #blacklist-items li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4px 0;
+      border-bottom: 1px solid #0f3460;
+      font-size: 12px;
+      font-family: monospace;
+      color: #a0c4ff;
+    }
+    #blacklist-items li:last-child { border-bottom: none; }
+    #blacklist-empty { font-size: 12px; color: #555; font-style: italic; }
+
+    .status-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .status-badge.blocked { background: #5c2222; color: #ff6b6b; }
+    .status-badge.active  { background: #1a3a1a; color: #4caf50; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>涨潮</h1>
+    <span>Zhangchao</span>
+  </header>
+
+  <section>
+    <div class="toggle-row">
+      <div class="toggle-label">
+        Replace English with Chinese
+        <small>Hover replaced words for pinyin tooltip</small>
+      </div>
+      <label class="switch">
+        <input type="checkbox" id="enabled-toggle" checked>
+        <span class="slider"></span>
+      </label>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Current Site</div>
+    <div class="site-row">
+      <code id="current-host">—</code>
+      <span id="site-status"></span>
+      <button class="small" id="toggle-site-btn">…</button>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-label">Blacklist</div>
+    <div id="add-form">
+      <input type="text" id="add-input" placeholder="example.com">
+      <button class="small action" id="add-btn">Add</button>
+    </div>
+    <ul id="blacklist-items"></ul>
+    <div id="blacklist-empty" style="display:none">No sites blacklisted.</div>
+  </section>
+
+  <script src="popup.js"></script>
+</body>
+</html>
