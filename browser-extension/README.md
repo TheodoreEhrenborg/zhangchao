@@ -37,6 +37,9 @@ you browse the web.
 > **Note:** Temporary add-ons are removed when Firefox restarts. For a permanent
 > local install without store publishing, see the Firefox signing section below.
 
+> **Storage:** The extension uses `storage.local` (not `storage.sync`) so settings
+> persist locally without requiring Firefox Sync or a published extension ID.
+
 ---
 
 ## Testing checklist

@@ -4,6 +4,12 @@
   "version": "1.0",
   "description": "Replace English words with Chinese characters or Pinyin as you browse",
   "permissions": ["storage", "activeTab"],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "zhangchao@zhangchao",
+      "strict_min_version": "109.0"
+    }
+  },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {

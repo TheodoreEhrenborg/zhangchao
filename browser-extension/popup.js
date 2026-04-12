@@ -1,10 +1,10 @@
 /* Zhangchao popup script */
 
 async function getStorage(keys) {
-  return new Promise(resolve => chrome.storage.sync.get(keys, resolve));
+  return new Promise(resolve => chrome.storage.local.get(keys, resolve));
 }
 async function setStorage(obj) {
-  return new Promise(resolve => chrome.storage.sync.set(obj, resolve));
+  return new Promise(resolve => chrome.storage.local.set(obj, resolve));
 }
 
 // ── Enable/disable toggle ─────────────────────────────────────────────────
