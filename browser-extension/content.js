@@ -224,7 +224,7 @@
 
   async function isBlacklisted() {
     const hostname = window.location.hostname.toLowerCase();
-    const result   = await chrome.storage.sync.get('blacklist');
+    const result   = await chrome.storage.local.get('blacklist');
     const list     = result.blacklist || [];
     return list.some(domain => {
       const d = domain.trim().toLowerCase();
@@ -239,7 +239,7 @@
 
     await loadVocabulary();
 
-    const result = await chrome.storage.sync.get('enabled');
+    const result = await chrome.storage.local.get('enabled');
     // Default to enabled
     if (result.enabled !== false) enable();
   }
