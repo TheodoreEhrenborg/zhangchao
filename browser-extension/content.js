@@ -65,6 +65,7 @@
     if (tooltip) return;
     tooltip = document.createElement('div');
     tooltip.id = 'zhangchao-tooltip';
+    tooltip.dataset.zhangchaoUi = 'true';
     Object.assign(tooltip.style, {
       position:      'fixed',
       background:    'rgba(28, 28, 28, 0.96)',
@@ -140,6 +141,7 @@
           if (SKIP_TAGS.has(p.nodeName)) return NodeFilter.FILTER_REJECT;
           if (p.isContentEditable) return NodeFilter.FILTER_REJECT;
           if (p.classList && p.classList.contains('zhangchao-word')) return NodeFilter.FILTER_REJECT;
+          if (p.closest && p.closest('[data-zhangchao-ui]')) return NodeFilter.FILTER_REJECT;
           if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
           return NodeFilter.FILTER_ACCEPT;
         },
