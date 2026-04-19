@@ -86,7 +86,7 @@ Returns nil for multi-word entries, very short words, and excluded pronouns."
       ((member word zhangchao--no-plural) nil)
       ((and (> len 3) (string-suffix-p "fe" word))
        (list (concat (substring word 0 (- len 2)) "ves")))
-      ((and (> len 2) (string-suffix-p "f" word))
+      ((and (> len 2) (string-suffix-p "f" word) (not (string-suffix-p "ff" word)))
        (list (concat (substring word 0 (- len 1)) "ves")))
       ((and (> len 2) (string-suffix-p "y" word)
             (not (string-match-p "[aeiou]y$" word)))

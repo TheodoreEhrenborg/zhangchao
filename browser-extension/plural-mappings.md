@@ -517,7 +517,7 @@ Flags: ✓ = maps correctly | ⚠ COLLISION = plural is already an explicit voca
 | `film` | 电影 | diànyǐng | `films` → ✓ |
 | `east side` | 东边 | dōngbian | *(phrase — no plurals)* |
 | `things` | 东西 | dōngxi | `thingses` → ✓ |
-| `stuff` | 东西 | dōngxi | `stufves` → ✓ |
+| `stuff` | 东西 | dōngxi | `stuffs` → ✓ |
 | `action` | 动作 | dòngzuò | `actions` → ✓ |
 | `movement` | 动作 | dòngzuò | `movements` → ✓ |
 | `how much` | 多少 | duōshao | *(phrase — no plurals)* |
