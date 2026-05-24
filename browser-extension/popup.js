@@ -118,6 +118,72 @@ document.getElementById('add-input').addEventListener('keydown', e => {
   if (e.key === 'Enter') document.getElementById('add-btn').click();
 });
 
+// ── 1-hour pause ──────────────────────────────────────────────────────────
+
+let pauseCountdownInterval = null;
+
+function formatCountdown(ms) {
+  const totalSec = Math.max(0, Math.ceil(ms / 1000));
+  const h = Math.floor(totalSec / 3600);
+  const m = Math.floor((totalSec % 3600) / 60);
+  const s = totalSec % 60;
+  if (h > 0) return `Paused · ${h}h ${m}m remaining`;
+  if (m > 0) return `Paused · ${m}m ${s}s remaining`;
+  return `Paused · ${s}s remaining`;
+}
+
+async function renderPauseSection() {
+  const btn    = document.getElementById('pause-btn');
+  const status = document.getElementById('pause-status');
+  const section = document.getElementById('pause-section');
+  const result  = await getStorage('pauseUntil');
+  const until   = result.pauseUntil || 0;
+
+  if (pauseCountdownInterval) {
+    clearInterval(pauseCountdownInterval);
+    pauseCountdownInterval = null;
+  }
+
+  if (until > Date.now()) {
+    btn.textContent     = 'Resume';
+    btn.className       = 'small action';
+    section.classList.add('paused');
+    const tick = () => {
+      const remaining = until - Date.now();
+      if (remaining <= 0) {
+        status.textContent = 'Resuming…';
+        clearInterval(pauseCountdownInterval);
+        pauseCountdownInterval = null;
+        section.classList.remove('paused');
+      } else {
+        status.textContent = formatCountdown(remaining);
+      }
+    };
+    tick();
+    pauseCountdownInterval = setInterval(tick, 1000);
+  } else {
+    btn.textContent = 'Pause';
+    btn.className   = 'small';
+    status.textContent = 'Auto-resumes after 60 min';
+    section.classList.remove('paused');
+  }
+}
+
+document.getElementById('pause-btn').addEventListener('click', async () => {
+  const result = await getStorage('pauseUntil');
+  const until  = result.pauseUntil || 0;
+
+  if (until > Date.now()) {
+    await setStorage({ pauseUntil: 0 });
+    chrome.alarms.clear('zhangchao-pause-end');
+  } else {
+    const newUntil = Date.now() + 60 * 60 * 1000;
+    await setStorage({ pauseUntil: newUntil });
+    chrome.alarms.create('zhangchao-pause-end', { when: newUntil });
+  }
+  renderPauseSection();
+});
+
 // ── Initialise ────────────────────────────────────────────────────────────
 
 (async () => {
@@ -126,4 +192,5 @@ document.getElementById('add-input').addEventListener('keydown', e => {
   renderBlacklist(result.blacklist || []);
   currentHost = await getCurrentHost();
   renderSiteSection(result.blacklist || []);
+  renderPauseSection();
 })();

@@ -3,7 +3,8 @@
   "name": "涨潮 Zhangchao",
   "version": "1.0",
   "description": "Replace English words with Chinese characters or Pinyin as you browse",
-  "permissions": ["storage", "activeTab"],
+  "permissions": ["storage", "activeTab", "alarms"],
+  "background": {"service_worker": "background.js"},
   "browser_specific_settings": {
     "gecko": {
       "id": "zhangchao@zhangchao",

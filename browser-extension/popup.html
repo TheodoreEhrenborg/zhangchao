@@ -154,6 +154,9 @@
     }
     .status-badge.blocked { background: #5c2222; color: #ff6b6b; }
     .status-badge.active  { background: #1a3a1a; color: #4caf50; }
+
+    #pause-section .toggle-label small { color: #e9a020; }
+    #pause-section.paused { background: #1e1a0e; }
   </style>
 </head>
 <body>
@@ -172,6 +175,16 @@
         <input type="checkbox" id="enabled-toggle" checked>
         <span class="slider"></span>
       </label>
+    </div>
+  </section>
+
+  <section id="pause-section">
+    <div class="toggle-row">
+      <div class="toggle-label">
+        Pause for 1 hour
+        <small id="pause-status">Auto-resumes after 60 min</small>
+      </div>
+      <button class="small" id="pause-btn">Pause</button>
     </div>
   </section>
 

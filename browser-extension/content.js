@@ -241,15 +241,23 @@
 
     await loadVocabulary();
 
-    const result = await chrome.storage.local.get('enabled');
-    // Default to enabled
-    if (result.enabled !== false) enable();
+    const result = await chrome.storage.local.get(['enabled', 'pauseUntil']);
+    const paused = result.pauseUntil && result.pauseUntil > Date.now();
+    if (result.enabled !== false && !paused) enable();
   }
 
-  // React to popup toggle in real time
+  // React to popup toggle and pause changes in real time
   chrome.storage.onChanged.addListener((changes) => {
-    if (changes.enabled && vocabLoaded) {
-      changes.enabled.newValue !== false ? enable() : disable();
+    if (!vocabLoaded) return;
+    if (changes.enabled || changes.pauseUntil) {
+      chrome.storage.local.get(['enabled', 'pauseUntil'], result => {
+        const paused = result.pauseUntil && result.pauseUntil > Date.now();
+        if (result.enabled !== false && !paused) {
+          enable();
+        } else {
+          disable();
+        }
+      });
     }
   });
 
